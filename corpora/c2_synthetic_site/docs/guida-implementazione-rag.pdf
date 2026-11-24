@@ -1,0 +1,30 @@
+%PDF-1.4
+1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj
+2 0 obj<</Type/Pages/Kids[3 0 R]/Count 1>>endobj
+3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 612 792]/Contents 4 0 R>>endobj
+4 0 obj<</Length 800>>stream
+BT/Helvetica 20 Tf 100 700 Td(Guida Implementazione RAG)Tj
+0 -30 Td/Helvetica 12 Tf
+(Capitolo 1: Architettura di base)Tj
+0 -20 Td
+(Capitolo 2: Chunking strategies)Tj
+0 -20 Td
+(Capitolo 3: Embedding models comparison)Tj
+0 -20 Td
+(Capitolo 4: Vector databases)Tj
+0 -20 Td
+(Capitolo 5: Evaluation framework)Tj
+ET
+endstream
+endobj
+xref
+0 5
+0000000000 65535 f
+0000000009 00000 n
+0000000052 00000 n
+0000000101 00000 n
+0000000196 00000 n
+trailer<</Size 5/Root 1 0 R>>
+startxref
+1052
+%%EOF

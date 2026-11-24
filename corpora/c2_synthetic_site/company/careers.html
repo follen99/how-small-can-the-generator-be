@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Carriere - TechNova Solutions</title>
+    <style>
+        body { font-family: system-ui; max-width: 900px; margin: 2rem auto; padding: 1rem; }
+        .job-card { border: 1px solid #ddd; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; }
+        .hidden-detail { display: none; }
+        .spinner { border: 3px solid #f3f3f3; border-top: 3px solid #667eea; border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <!-- In company/pricing.html, company/careers.html, company/case-studies.html -->
+    <nav style="background: #f8f9fa; padding: 1rem; margin-bottom: 2rem; border-radius: 8px;">
+        <a href="/" style="color: #667eea; text-decoration: none;">🏠 Home</a> 
+        <span style="color: #666; margin: 0 0.5rem;">/</span> 
+        <span style="color: #333;">Pagina Corrente</span>
+    </nav>
+        
+    <h1>🎯 Lavora con Noi</h1>
+    <p>TechNova cerca talenti appassionati di AI.</p>
+    
+    <div id="jobs-container">
+        <div class="spinner"></div>
+        <p>Caricamento offerte in corso...</p>
+    </div>
+
+    <script>
+        // Simula fetch API con delay
+        setTimeout(() => {
+            document.getElementById('jobs-container').innerHTML = `
+                <div class="job-card" data-job-id="ai-engineer-001">
+                    <h3>Senior AI Engineer</h3>
+                    <p><strong>Location:</strong> Milano (Ibrido)</p>
+                    <p><strong>RAL:</strong> €65.000 - €85.000</p>
+                    <button onclick="toggleDetails(this)">Vedi Dettagli</button>
+                    <div class="hidden-detail" style="margin-top:1rem; padding:1rem; background:#f5f5f5;">
+                        <h4>Responsabilità:</h4>
+                        <ul>
+                            <li>Progettazione architetture RAG su larga scala</li>
+                            <li>Ottimizzazione modelli LLM per produzione</li>
+                            <li>Mentoring team junior</li>
+                        </ul>
+                        <h4>Requisiti:</h4>
+                        <ul>
+                            <li>5+ anni esperienza Python e ML</li>
+                            <li>Esperienza con LangChain, LlamaIndex, Haystack</li>
+                            <li>Conoscenza approfondita di vector DB (Pinecone, Weaviate, pgvector)</li>
+                            <li>Inglese fluente (C1 minimo)</li>
+                        </ul>
+                        <p><strong>Benefit:</strong> Budget formazione €3.000/anno, MacBook Pro M3, Smart working 3gg/settimana</p>
+                    </div>
+                </div>
+                
+                <div class="job-card" data-job-id="mlops-002">
+                    <h3>MLOps Engineer</h3>
+                    <p><strong>Location:</strong> Remoto (Italia)</p>
+                    <p><strong>RAL:</strong> €55.000 - €70.000</p>
+                    <button onclick="toggleDetails(this)">Vedi Dettagli</button>
+                    <div class="hidden-detail" style="margin-top:1rem; padding:1rem; background:#f5f5f5;">
+                        <h4>Stack Tecnico:</h4>
+                        <p>Kubernetes, Kubeflow, MLflow, Terraform, AWS/GCP, Prometheus, Grafana</p>
+                        <h4>Progetto Attuale:</h4>
+                        <p>Migrazione infrastruttura on-premise a GCP per sistema di recommendation con 10M utenti attivi</p>
+                    </div>
+                </div>
+            `;
+        }, 1500);
+
+        function toggleDetails(btn) {
+            const detail = btn.nextElementSibling;
+            detail.style.display = detail.style.display === 'none' ? 'block' : 'none';
+            btn.textContent = detail.style.display === 'none' ? 'Vedi Dettagli' : 'Nascondi';
+        }
+    </script>
+</body>
+</html>

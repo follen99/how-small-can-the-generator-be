@@ -1,0 +1,1 @@
+Procedure risposta incidenti cybersecurity: classification (P1 critico,  P2 alto, P3 medio, P4 basso), escalation matrix, containment procedures, forensics preservation, communication templates, post-incident review  requirements

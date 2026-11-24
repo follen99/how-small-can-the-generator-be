@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Studies - TechNova Solutions</title>
+    <style>
+        body { font-family: system-ui; max-width: 1000px; margin: 2rem auto; padding: 1rem; }
+        .filter-bar { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .filter-btn { padding: 0.5rem 1rem; border: 1px solid #667eea; background: white; cursor: pointer; border-radius: 20px; }
+        .filter-btn.active { background: #667eea; color: white; }
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .case-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; opacity: 0; animation: fadeIn 0.5s forwards; }
+        @keyframes fadeIn { to { opacity: 1; } }
+        .case-content { padding: 1.5rem; }
+        .metrics { display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.9rem; }
+        .metric { background: #f0f0f0; padding: 0.5rem; border-radius: 4px; }
+        .load-more { text-align: center; margin-top: 2rem; }
+        .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: loading 1.5s infinite; height: 200px; border-radius: 8px; }
+        @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    </style>
+</head>
+<body>
+    <!-- In company/pricing.html, company/careers.html, company/case-studies.html -->
+    <nav style="background: #f8f9fa; padding: 1rem; margin-bottom: 2rem; border-radius: 8px;">
+        <a href="/" style="color: #667eea; text-decoration: none;">🏠 Home</a> 
+        <span style="color: #666; margin: 0 0.5rem;">/</span> 
+        <span style="color: #333;">Pagina Corrente</span>
+    </nav>
+    
+    <h1>🏆 Casi di Successo</h1>
+    
+    <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterCases('all')">Tutti</button>
+        <button class="filter-btn" onclick="filterCases('finance')">Finanza</button>
+        <button class="filter-btn" onclick="filterCases('healthcare')">Sanità</button>
+        <button class="filter-btn" onclick="filterCases('retail')">Retail</button>
+        <button class="filter-btn" onclick="filterCases('manufacturing')">Manifatturiero</button>
+    </div>
+
+    <div id="case-container" class="case-grid">
+        <!-- Initial cases -->
+    </div>
+    
+    <div class="load-more">
+        <button onclick="loadMore()" id="load-btn">Carica Altri Casi</button>
+        <div id="loading" class="skeleton" style="display:none; margin-top:1rem;"></div>
+    </div>
+
+    <script>
+        const cases = [
+            {
+                id: 1,
+                category: 'finance',
+                title: 'Banca Nazionale - Automazione Customer Service',
+                client: 'Banca Nazionale S.p.A.',
+                industry: 'Banking',
+                challenge: '10.000 ticket di supporto al giorno, tempi di risposta medi 4 ore',
+                solution: 'Implementazione chatbot RAG su knowledge base di 50.000 documenti normativi',
+                metrics: { roi: '340%', time_saved: '2.500h/mese', satisfaction: '4.8/5' },
+                quote: 'Abbiamo ridotto il tempo medio di risposta da 4 ore a 30 secondi',
+                author: 'Antonio Neri, CFO'
+            },
+            {
+                id: 2,
+                category: 'healthcare',
+                title: 'Ospedale San Raffaele - Analisi Documentale',
+                client: 'IRCCS Ospedale San Raffaele',
+                industry: 'Healthcare',
+                challenge: 'Elaborazione manuale di 5.000 referti medici al mese',
+                solution: 'Sistema RAG per estrazione automatica dati da referti e integrazione con HL7 FHIR',
+                metrics: { accuracy: '99.2%', time_reduction: '85%', cost_saving: '€400k/anno' },
+                quote: 'La precisione nell\'estrazione dei dati clinici ha superato le nostre aspettative',
+                author: 'Dr. Giuseppe Verdi, Direttore Sanitario'
+            },
+            {
+                id: 3,
+                category: 'retail',
+                title: 'RetailGiant - Recommendation Engine',
+                client: 'RetailGiant S.p.A.',
+                industry: 'Retail',
+                challenge: 'Tasso di conversione e-commerce al 1.2%, carrelli abbandonati al 70%',
+                solution: 'LLM-powered product recommendations con RAG su catalogo 100k prodotti',
+                metrics: { conversion: '+45%', revenue: '+€12M/anno', ctr: '+180%' },
+                quote: 'Il sistema capisce il contesto delle richieste dei clienti come un commesso esperto',
+                author: 'Laura Bianchi, CTO'
+            },
+            {
+                id: 4,
+                category: 'manufacturing',
+                title: 'AutoTech - Manutenzione Predittiva',
+                client: 'AutoTech Industries',
+                industry: 'Automotive',
+                challenge: 'Fermi macchina imprevisti costano €50k/ora, manutenzione reattiva',
+                solution: 'RAG su manuali tecnici + sensor IoT per diagnosticare guasti prima che accadano',
+                metrics: { downtime: '-60%', maintenance_cost: '-40%', mtbf: '+85%' },
+                quote: 'Prevediamo i guasti 72 ore prima con 94% di accuratezza',
+                author: 'Eng. Marco Ferrari, Plant Manager'
+            },
+            {
+                id: 5,
+                category: 'finance',
+                title: 'Assicurazione Futura - Claims Processing',
+                client: 'Assicurazione Futura',
+                industry: 'Insurance',
+                challenge: 'Liquidazione sinistri mediamente 15 giorni, backlog di 3.000 pratiche',
+                solution: 'Automazione RAG per analisi documenti sinistri e calcolo risarcimenti',
+                metrics: { processing_time: '-75%', accuracy: '98.5%', fraud_detected: '+€2M' },
+                quote: 'Liquidiamo il 70% dei sinistri minori in automatico in meno di 2 ore',
+                author: 'Paola Rossi, Responsabile Sinistri'
+            },
+            {
+                id: 6,
+                category: 'healthcare',
+                title: 'Farmacia Online - Consultazione Farmaci',
+                client: 'FarmaClick',
+                industry: 'Pharma',
+                challenge: 'Farmacisti sopraffatti da 500 chat/giorno di richieste su interazioni farmaci',
+                solution: 'Chatbot RAG su farmacopea italiana e foglietti illustrativi AIFA',
+                metrics: { queries_handled: '85%', pharmacist_time: '-60%', errors: '-90%' },
+                quote: 'Il sistema riconosce anche interazioni farmacologiche complesse multi-farmaco',
+                author: 'Dott.ssa Anna Neri, Responsabile Scientifica'
+            }
+        ];
+
+        let displayedCount = 0;
+        const batchSize = 3;
+
+        function renderCases(filter = 'all', append = false) {
+            const container = document.getElementById('case-container');
+            if (!append) container.innerHTML = '';
+            
+            const filtered = filter === 'all' ? cases : cases.filter(c => c.category === filter);
+            const toShow = filtered.slice(displayedCount, displayedCount + batchSize);
+            
+            toShow.forEach(c => {
+                const card = document.createElement('div');
+                card.className = 'case-card';
+                card.innerHTML = `
+                    <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1rem;">
+                        <span style="font-size: 0.8rem; opacity: 0.9;">${c.industry}</span>
+                        <h3 style="margin: 0.5rem 0 0 0;">${c.title}</h3>
+                    </div>
+                    <div class="case-content">
+                        <p><strong>Cliente:</strong> ${c.client}</p>
+                        <p style="margin-top: 0.5rem;"><strong>Sfida:</strong> ${c.challenge}</p>
+                        <p style="margin-top: 0.5rem;"><strong>Soluzione:</strong> ${c.solution}</p>
+                        <div class="metrics">
+                            ${Object.entries(c.metrics).map(([k,v]) => 
+                                `<div class="metric"><strong>${k}:</strong> ${v}</div>`
+                            ).join('')}
+                        </div>
+                        <blockquote style="margin-top: 1rem; padding-left: 1rem; border-left: 3px solid #667eea; font-style: italic; color: #555;">
+                            "${c.quote}"<br>
+                            <span style="font-size: 0.9rem; color: #888;">— ${c.author}</span>
+                        </blockquote>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            
+            displayedCount += toShow.length;
+            document.getElementById('load-btn').style.display = 
+                displayedCount >= filtered.length ? 'none' : 'inline-block';
+        }
+
+        function filterCases(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            displayedCount = 0;
+            renderCases(category);
+        }
+
+        function loadMore() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('load-btn').style.display = 'none';
+            
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+                const activeFilter = document.querySelector('.filter-btn.active').textContent.toLowerCase();
+                const map = {'tutti': 'all', 'finanza': 'finance', 'sanità': 'healthcare', 'retail': 'retail', 'manifatturiero': 'manufacturing'};
+                renderCases(map[activeFilter] || 'all', true);
+            }, 800);
+        }
+
+        // Initial render
+        renderCases();
+    </script>
+</body>
+</html>

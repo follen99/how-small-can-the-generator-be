@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>API Documentation - TechNova Solutions</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { color: #667eea; }
+        code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 4px; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+        .endpoint { background: #f0f0f0; padding: 1rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #667eea; }
+    </style>
+</head>
+<body>
+    <!-- In tech/stack.html e tech/api.html -->
+    <nav style="background: #f8f9fa; padding: 1rem; margin-bottom: 2rem; border-radius: 8px;">
+        <a href="/" style="color: #667eea; text-decoration: none;">🏠 Home</a>
+        <span style="color: #666; margin: 0 0.5rem;">/</span>
+        <span style="color: #333;">Area Tecnica</span>
+        <span style="float: right;">
+            <a href="/tech/stack" style="color: #667eea; margin-right: 1rem;">Stack</a>
+            <a href="/tech/api" style="color: #667eea;">API</a>
+        </span>
+    </nav>
+
+    <h1>📚 API Documentation</h1>
+    <p>Base URL: <code>https://api.technova.ai/v1</code></p>
+
+    <h2>Autenticazione</h2>
+    <p>Tutte le richieste richiedono un header <code>Authorization: Bearer &lt;token&gt;</code></p>
+
+    <div class="endpoint">
+        <h3>POST /chat</h3>
+        <p>Invia una query al chatbot RAG</p>
+        <pre>{
+  "query": "Quali servizi offrite?",
+  "session_id": "optional-session-id",
+  "context_filter": {"source": "website"}
+}</pre>
+        <p><strong>Response:</strong></p>
+        <pre>{
+  "answer": "Offriamo consulenza AI, sviluppo chatbot e automazione RPA...",
+  "sources": [
+    {"url": "https://...", "title": "Servizi", "score": 0.95}
+  ],
+  "tokens_used": 342
+}</pre>
+    </div>
+
+    <div class="endpoint">
+        <h3>POST /documents/upload</h3>
+        <p>Carica documenti per indicizzazione</p>
+        <pre>Content-Type: multipart/form-data
+
+file: &lt;binary&gt;
+metadata: {"client_id": "123", "project": "RAG"}</pre>
+    </div>
+
+    <div class="endpoint">
+        <h3>GET /documents/{id}</h3>
+        <p>Recupera informazioni su un documento indicizzato</p>
+    </div>
+
+    <h2>Rate Limiting</h2>
+    <ul>
+        <li>Free tier: 100 richieste/ora</li>
+        <li>Pro tier: 10,000 richieste/ora</li>
+        <li>Enterprise: illimitato</li>
+    </ul>
+
+    <h2>SDK Ufficiali</h2>
+    <ul>
+        <li>Python: <code>pip install technova-sdk</code></li>
+        <li>JavaScript/TypeScript: <code>npm install @technova/sdk</code></li>
+        <li>Go: <code>go get github.com/technova/sdk-go</code></li>
+    </ul>
+</body>
+</html>

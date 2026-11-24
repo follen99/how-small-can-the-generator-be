@@ -1,0 +1,7 @@
+Usa il seguente contesto per rispondere alla domanda.
+
+=== CONTESTO ===
+{context}
+=== FINE CONTESTO ===
+
+Domanda: {query}

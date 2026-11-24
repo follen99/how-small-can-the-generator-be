@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Pricing - TechNova Solutions</title>
+    <style>
+        body { font-family: system-ui; max-width: 1000px; margin: 2rem auto; padding: 1rem; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0; }
+        .plan { border: 2px solid #ddd; padding: 2rem; border-radius: 12px; position: relative; }
+        .plan.popular { border-color: #667eea; transform: scale(1.05); }
+        .tooltip { position: relative; cursor: help; border-bottom: 1px dotted #667eea; }
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+            background: #333; color: white; padding: 0.5rem; border-radius: 4px; white-space: nowrap; z-index: 1000;
+        }
+        .toggle-billing { text-align: center; margin: 2rem 0; }
+        .price { font-size: 2.5rem; font-weight: bold; color: #667eea; }
+        .price.annually { display: none; }
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+        .feature-list li::before { content: "✓ "; color: #28a745; font-weight: bold; }
+        .feature-list li.disabled { color: #999; }
+        .feature-list li.disabled::before { content: "✗ "; color: #dc3545; }
+    </style>
+</head>
+<body>
+    <!-- In company/pricing.html, company/careers.html, company/case-studies.html -->
+    <nav style="background: #f8f9fa; padding: 1rem; margin-bottom: 2rem; border-radius: 8px;">
+        <a href="/" style="color: #667eea; text-decoration: none;">🏠 Home</a> 
+        <span style="color: #666; margin: 0 0.5rem;">/</span> 
+        <span style="color: #333;">Pagina Corrente</span>
+    </nav>
+    <h1>💰 Listino Prezzi</h1>
+    
+    <div class="toggle-billing">
+        <label>Fatturazione: 
+            <select onchange="toggleBilling(this.value)">
+                <option value="monthly">Mensile</option>
+                <option value="annually">Annuale (-20%)</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="pricing-grid">
+        <div class="plan">
+            <h2>Starter</h2>
+            <p class="price monthly">€499<span style="font-size:1rem">/mese</span></p>
+            <p class="price annually">€4.790<span style="font-size:1rem">/anno</span></p>
+            <p>Per piccoli team e startup</p>
+            <ul class="feature-list">
+                <li>10.000 query/mese <span class="tooltip" data-tooltip="Query al chatbot RAG">?</span></li>
+                <li>1 knowledge base</li>
+                <li>Supporto email (48h)</li>
+                <li class="disabled">API access</li>
+                <li class="disabled">Custom embedding</li>
+            </ul>
+            <p style="margin-top:1rem; font-size:0.9rem; color:#666;">
+                <strong>Setup fee:</strong> €1.500 una tantum
+            </p>
+        </div>
+
+        <div class="plan popular">
+            <div style="position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:#667eea; color:white; padding:0.25rem 1rem; border-radius:20px; font-size:0.8rem;">PIÙ POPOLARE</div>
+            <h2>Professional</h2>
+            <p class="price monthly">€1.499<span style="font-size:1rem">/mese</span></p>
+            <p class="price annually">€14.390<span style="font-size:1rem">/anno</span></p>
+            <p>Per aziende in crescita</p>
+            <ul class="feature-list">
+                <li>100.000 query/mese <span class="tooltip" data-tooltip="Sovrapprezzo: €0.008/query extra">?</span></li>
+                <li>5 knowledge base</li>
+                <li>Supporto prioritario (24h)</li>
+                <li>API access completa</li>
+                <li>Custom embedding models</li>
+                <li>Analytics dashboard</li>
+            </ul>
+            <p style="margin-top:1rem; font-size:0.9rem; color:#666;">
+                <strong>Setup fee:</strong> €3.000 una tantum<br>
+                <strong>Training:</strong> 4h incluso
+            </p>
+        </div>
+
+        <div class="plan">
+            <h2>Enterprise</h2>
+            <p class="price">Custom</p>
+            <p>Soluzioni su misura</p>
+            <ul class="feature-list">
+                <li>Query illimitate</li>
+                <li>Knowledge base illimitate</li>
+                <li>SLA 99.9% garantito</li>
+                <li>Dedicated support engineer</li>
+                <li>On-premise deployment</li>
+                <li>SSO & Audit logs</li>
+                <li>Custom AI model fine-tuning</li>
+            </ul>
+            <p style="margin-top:1rem; font-size:0.9rem; color:#666;">
+                Contatta sales@technova.it per preventivo
+            </p>
+        </div>
+    </div>
+
+    <div style="background:#f8f9fa; padding:2rem; border-radius:8px; margin-top:2rem;">
+        <h3>📊 Calcolatore ROI</h3>
+        <p>Inserisci i tuoi dati per stimare il risparmio:</p>
+        <form onsubmit="calculateROI(event)" style="display:grid; gap:1rem; margin-top:1rem;">
+            <div>
+                <label>Ticket di supporto/mese:</label>
+                <input type="number" id="tickets" placeholder="500" style="padding:0.5rem; width:200px;">
+            </div>
+            <div>
+                <label>Costo medio per ticket (€):</label>
+                <input type="number" id="cost" placeholder="15" style="padding:0.5rem; width:200px;">
+            </div>
+            <button type="submit">Calcola Risparmio</button>
+        </form>
+        <div id="roi-result" style="margin-top:1rem; font-weight:bold; color:#28a745;"></div>
+    </div>
+
+    <script>
+        function toggleBilling(period) {
+            document.querySelectorAll('.price.monthly').forEach(el => el.style.display = period === 'monthly' ? 'block' : 'none');
+            document.querySelectorAll('.price.annually').forEach(el => el.style.display = period === 'annually' ? 'block' : 'none');
+        }
+
+        function calculateROI(e) {
+            e.preventDefault();
+            const tickets = parseInt(document.getElementById('tickets').value) || 0;
+            const cost = parseFloat(document.getElementById('cost').value) || 0;
+            const currentCost = tickets * cost;
+            const automationRate = 0.7; // 70% automated
+            const savings = currentCost * automationRate;
+            document.getElementById('roi-result').textContent = 
+                `Risparmio stimato: €${savings.toLocaleString('it-IT')}/mese (€${(savings*12).toLocaleString('it-IT')}/anno)`;
+        }
+    </script>
+</body>
+</html>

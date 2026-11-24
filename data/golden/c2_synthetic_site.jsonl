@@ -1,0 +1,100 @@
+{"id": 1, "category": "reformulation", "question": "Quale indirizzo base devono usare i client per le chiamate alle API?", "reference_answer": "https://api.technova.ai/v1"}
+{"id": 2, "category": "reformulation", "question": "Con quale intestazione si invia il token bearer nelle richieste?", "reference_answer": "Authorization: Bearer <token>"}
+{"id": 3, "category": "reformulation", "question": "Qual è la soglia oraria prevista per il piano gratuito?", "reference_answer": "100 richieste/ora"}
+{"id": 4, "category": "reformulation", "question": "Quante richieste all'ora consente il piano Pro delle API?", "reference_answer": "10.000 richieste/ora"}
+{"id": 5, "category": "reformulation", "question": "Quando e stato pubblicato l'articolo sulle lezioni apprese dai deployment RAG?", "reference_answer": "15 Gennaio 2024"}
+{"id": 6, "category": "reformulation", "question": "Quanti punti guida sono elencati nella lista dei principi?", "reference_answer": "7"}
+{"id": 7, "category": "reformulation", "question": "Nel confronto dei database vettoriali, quale p99 ha pgvector?", "reference_answer": "28ms"}
+{"id": 8, "category": "reformulation", "question": "Qual è la capacita di throughput dichiarata per Weaviate Cloud?", "reference_answer": "1.5k QPS"}
+{"id": 9, "category": "reformulation", "question": "Quali valori di m ed ef_construction sono suggeriti per l'indice HNSW?", "reference_answer": "m=16, ef_construction=128"}
+{"id": 10, "category": "reformulation", "question": "Qual è la fascia retributiva annua per il ruolo Senior AI Engineer?", "reference_answer": "EUR 65.000 - EUR 85.000"}
+{"id": 11, "category": "reformulation", "question": "Dove si svolge il lavoro per il ruolo MLOps Engineer?", "reference_answer": "Remoto (Italia)"}
+{"id": 12, "category": "reformulation", "question": "A quanto ammonta il budget di formazione annuale?", "reference_answer": "EUR 3.000/anno"}
+{"id": 13, "category": "reformulation", "question": "Su quanti utenti attivi opera il sistema di recommendation in migrazione?", "reference_answer": "10M"}
+{"id": 14, "category": "reformulation", "question": "Qual è il ritorno sull'investimento del progetto Banca Nazionale?", "reference_answer": "340%"}
+{"id": 15, "category": "reformulation", "question": "Qual è la percentuale di accuratezza dichiarata per San Raffaele?", "reference_answer": "99.2%"}
+{"id": 16, "category": "reformulation", "question": "Di quanto cresce la conversione per RetailGiant?", "reference_answer": "+45%"}
+{"id": 17, "category": "reformulation", "question": "Quanto si riducono i fermi macchina nel caso AutoTech?", "reference_answer": "-60%"}
+{"id": 18, "category": "reformulation", "question": "Quante pratiche erano in arretrato per Assicurazione Futura?", "reference_answer": "3.000"}
+{"id": 19, "category": "reformulation", "question": "Quale quota di richieste viene gestita automaticamente per FarmaClick?", "reference_answer": "85%"}
+{"id": 20, "category": "reformulation", "question": "Qual è il canone mensile del piano Starter?", "reference_answer": "EUR 499/mese"}
+{"id": 21, "category": "negation", "question": "Qual è il numero totale di brevetti depositati da TechNova Solutions?", "reference_answer": "questa informazione non e disponibile nei documenti"}
+{"id": 22, "category": "negation", "question": "Qual è il numero di uffici internazionali dell'azienda?", "reference_answer": "questa informazione non e presente nei documenti"}
+{"id": 23, "category": "negation", "question": "Qual è il fatturato dell'anno 2019?", "reference_answer": "informazione non disponibile nei documenti"}
+{"id": 24, "category": "negation", "question": "Qual è il nome del CFO di TechNova Solutions?", "reference_answer": "questa informazione non e disponibile nei documenti"}
+{"id": 25, "category": "negation", "question": "Qual è il numero di cellulare personale del CEO?", "reference_answer": "questa informazione non e disponibile nei documenti"}
+{"id": 26, "category": "negation", "question": "Qual è la percentuale di churn annuale dei clienti?", "reference_answer": "questa informazione non e presente nei documenti"}
+{"id": 27, "category": "negation", "question": "Qual è il tempo medio di implementazione di un progetto RAG in settimane?", "reference_answer": "informazione non disponibile nei documenti"}
+{"id": 28, "category": "negation", "question": "Qual è il numero di iscritti al webinar 'Costruire un RAG Production-Ready'?", "reference_answer": "questa informazione non e disponibile nei documenti"}
+{"id": 29, "category": "negation", "question": "Qual è il costo orario di consulenza per i Senior AI Engineer?", "reference_answer": "questa informazione non e presente nei documenti"}
+{"id": 30, "category": "negation", "question": "Qual è il prezzo esatto del piano Enterprise?", "reference_answer": "informazione non disponibile nei documenti"}
+{"id": 31, "category": "negation", "question": "Qual è il tempo medio di risposta del supporto email dello Starter in minuti?", "reference_answer": "questa informazione non e disponibile nei documenti"}
+{"id": 32, "category": "negation", "question": "Qual è il tasso di retention annuale dei clienti del piano Professional?", "reference_answer": "questa informazione non e presente nei documenti"}
+{"id": 33, "category": "negation", "question": "Qual è il nome del partner tecnologico con certificazione Platinum?", "reference_answer": "informazione non disponibile nei documenti"}
+{"id": 34, "category": "negation", "question": "Qual è il costo per token del modello GPT-4o nel sistema RAG?", "reference_answer": "questa informazione non e disponibile nei documenti"}
+{"id": 35, "category": "negation", "question": "Qual è il numero di release software effettuate nel 2024?", "reference_answer": "questa informazione non e presente nei documenti"}
+{"id": 36, "category": "negation", "question": "Qual è il numero di ore di training incluse nel piano Starter?", "reference_answer": "informazione non disponibile nei documenti"}
+{"id": 37, "category": "negation", "question": "Qual è il capitale investito nella Serie A?", "reference_answer": "questa informazione non e disponibile nei documenti"}
+{"id": 38, "category": "negation", "question": "Qual è il numero di dipendenti nel reparto marketing?", "reference_answer": "questa informazione non e presente nei documenti"}
+{"id": 39, "category": "negation", "question": "Qual è il numero di clienti attivi nel settore pubblico?", "reference_answer": "informazione non disponibile nei documenti"}
+{"id": 40, "category": "negation", "question": "Qual è il tasso di soddisfazione specifico del case study FarmaClick in percentuale?", "reference_answer": "questa informazione non e disponibile nei documenti"}
+{"id": 41, "category": "multi_hop", "question": "Qual è il prezzo annuale del piano Professional e Qual è il rate limit del Pro tier API?", "reference_answer": "EUR 14.390/anno e 10.000 richieste/ora"}
+{"id": 42, "category": "multi_hop", "question": "Quali modelli di embedding sono citati nello stack e quale endpoint serve per caricare documenti?", "reference_answer": "text-embedding-3-large e BGE-large; POST /documents/upload"}
+{"id": 43, "category": "multi_hop", "question": "Qual è l'indirizzo della sede legale e quale SLA garantisce il piano Enterprise?", "reference_answer": "Corso Italia 100, 20122 Milano e SLA 99.9%"}
+{"id": 44, "category": "multi_hop", "question": "Quanti PDF sono elencati e Qual è il prezzo mensile del piano Starter?", "reference_answer": "5 e EUR 499/mese"}
+{"id": 45, "category": "multi_hop", "question": "Qual è la data del webinar sul RAG production-ready e Qual è la latenza media del sistema RAG su 100k documenti?", "reference_answer": "15 Dicembre 2023 e 800ms"}
+{"id": 46, "category": "multi_hop", "question": "Qual è il nome del CTO nei testimonial e quale azienda ha ottenuto la conversione +45% nel case study?", "reference_answer": "Laura Bianchi e RetailGiant S.p.A."}
+{"id": 47, "category": "multi_hop", "question": "Quali certificazioni sono elencate nei dati sensibili e quale protocollo di cifratura in transito e indicato nello status sicurezza?", "reference_answer": "ISO 27001 e ISO 9001; TLS 1.3"}
+{"id": 48, "category": "multi_hop", "question": "Quanti token sono processati al giorno e Qual è la latency p99 di Pinecone Serverless?", "reference_answer": "2.3B e 45ms"}
+{"id": 49, "category": "multi_hop", "question": "Qual è il costo mensile di Pinecone Serverless e quante knowledge base include il piano Professional?", "reference_answer": "USD 70 e 5"}
+{"id": 50, "category": "multi_hop", "question": "Qual è la data di fondazione dell'azienda e Qual è il Base URL delle API?", "reference_answer": "15 Marzo 2018 e https://api.technova.ai/v1"}
+{"id": 51, "category": "multi_hop", "question": "Quanti dipendenti ha l'azienda e quante query/mese offre il piano Starter?", "reference_answer": "150 e 10.000 query/mese"}
+{"id": 52, "category": "multi_hop", "question": "Qual è la location del Senior AI Engineer e in quali regioni AWS sono i cluster multi-region?", "reference_answer": "Milano (Ibrido) e eu-west-1, eu-central-1"}
+{"id": 53, "category": "multi_hop", "question": "Qual è il capitale sociale e Qual è il setup fee del piano Professional?", "reference_answer": "EUR 500.000 i.v. e EUR 3.000 una tantum"}
+{"id": 54, "category": "multi_hop", "question": "Quanti progetti sono indicati nel 2023 e Qual è l'accuracy media nel Web Component?", "reference_answer": "134 e 94.7%"}
+{"id": 55, "category": "multi_hop", "question": "Qual è il tempo risparmiato nel case study Banca Nazionale e Qual è la durata del webinar introduttivo ai LLM?", "reference_answer": "2.500h/mese e 90 minuti"}
+{"id": 56, "category": "multi_hop", "question": "Quale tecnica di retrieval e indicata nello stack e quale principio del blog la rende necessaria?", "reference_answer": "Hybrid search (semantico + BM25) e il blog dice che e obbligatoria"}
+{"id": 57, "category": "multi_hop", "question": "Qual è l'email per il preventivo Enterprise e quale header di autenticazione richiedono le API?", "reference_answer": "sales@technova.it e Authorization: Bearer <token>"}
+{"id": 58, "category": "multi_hop", "question": "Qual è la riduzione dei tempi nel case study Ospedale San Raffaele e Qual è l'accuracy media del sistema nel Web Component?", "reference_answer": "85% e 94.7%"}
+{"id": 59, "category": "multi_hop", "question": "Qual è il throughput Q3 2024 nel grafico e Qual è il throughput di pgvector nel confronto del blog?", "reference_answer": "18k req/s e 3k QPS"}
+{"id": 60, "category": "multi_hop", "question": "Quanti Cloud Provider ci sono tra i partner e quale strumento IaC e usato nello stack?", "reference_answer": "2 (Amazon Web Services, Microsoft Azure) e Terraform"}
+{"id": 61, "category": "standard", "question": "Qual è il nome dell'azienda?", "reference_answer": "TechNova Solutions S.p.A."}
+{"id": 62, "category": "standard", "question": "In quale data è stata fondata TechNova Solutions?", "reference_answer": "15 Marzo 2018"}
+{"id": 63, "category": "standard", "question": "Qual è l'indirizzo della sede principale?", "reference_answer": "Via dell'Innovazione 42, 20134 Milano, Italia"}
+{"id": 64, "category": "standard", "question": "Qual è la Partita IVA di TechNova Solutions?", "reference_answer": "IT12345678901"}
+{"id": 65, "category": "standard", "question": "Quanti dipendenti ha l'azienda?", "reference_answer": "150"}
+{"id": 66, "category": "standard", "question": "In quale settore opera TechNova Solutions?", "reference_answer": "Intelligenza Artificiale e Automazione"}
+{"id": 67, "category": "standard", "question": "Da quale prezzo parte la consulenza AI strategica?", "reference_answer": "Da EUR 5.000"}
+{"id": 68, "category": "standard", "question": "Quali modelli LLM sono citati per l'integrazione dei chatbot avanzati?", "reference_answer": "GPT-4, Claude, Llama"}
+{"id": 69, "category": "standard", "question": "Quale funzionalita di monitoraggio e inclusa nell'automazione processi?", "reference_answer": "Monitoraggio 24/7"}
+{"id": 70, "category": "standard", "question": "Qual è l'accuracy indicata per FinAlytics Pro?", "reference_answer": "85%"}
+{"id": 71, "category": "standard", "question": "Come e classificato MediScan AI dal punto di vista CE?", "reference_answer": "Dispositivo medico classe IIa"}
+{"id": 72, "category": "standard", "question": "Quale funzionalita di pricing offre RetailMind?", "reference_answer": "Dynamic pricing engine"}
+{"id": 73, "category": "standard", "question": "Quanti documenti PDF scaricabili sono elencati?", "reference_answer": "5"}
+{"id": 74, "category": "standard", "question": "Quale risultato e citato nel testimonial di Laura Bianchi (RetailGiant)?", "reference_answer": "Riduzione dei tempi di risposta del 70%"}
+{"id": 75, "category": "standard", "question": "Qual è il fatturato 2024 indicato nella tabella performance?", "reference_answer": "EUR 12.5M"}
+{"id": 76, "category": "standard", "question": "Qual è il capitale sociale dell'azienda?", "reference_answer": "EUR 500.000 i.v."}
+{"id": 77, "category": "standard", "question": "Quanti modelli sono riportati come deployati nel Web Component?", "reference_answer": "47"}
+{"id": 78, "category": "standard", "question": "Quale algoritmo di cifratura at rest viene dichiarato nello status sicurezza?", "reference_answer": "AES-256"}
+{"id": 79, "category": "standard", "question": "Qual è la retention hot dei backup secondo la FAQ?", "reference_answer": "30 giorni hot"}
+{"id": 80, "category": "standard", "question": "Quale partner ha la certificazione Elite Partner nella tabella?", "reference_answer": "Snowflake"}
+{"id": 81, "category": "factual", "question": "Qual è il Base URL delle API TechNova?", "reference_answer": "https://api.technova.ai/v1"}
+{"id": 82, "category": "factual", "question": "Quale header di autenticazione e richiesto per le richieste API?", "reference_answer": "Authorization: Bearer <token>"}
+{"id": 83, "category": "factual", "question": "Qual è il rate limit del Free tier?", "reference_answer": "100 richieste/ora"}
+{"id": 84, "category": "factual", "question": "Qual è il rate limit del Pro tier?", "reference_answer": "10.000 richieste/ora"}
+{"id": 85, "category": "factual", "question": "In quale data e stato pubblicato il post su ottimizzazione RAG?", "reference_answer": "15 Gennaio 2024"}
+{"id": 86, "category": "factual", "question": "Quanti principi fondamentali sono elencati nel post sull'ottimizzazione RAG?", "reference_answer": "7"}
+{"id": 87, "category": "factual", "question": "Qual è la latency p99 di pgvector nel confronto dei vector DB?", "reference_answer": "28ms"}
+{"id": 88, "category": "factual", "question": "Qual è il throughput di Weaviate Cloud nel confronto?", "reference_answer": "1.5k QPS"}
+{"id": 89, "category": "factual", "question": "Quali parametri HNSW sono consigliati per pgvector?", "reference_answer": "m=16, ef_construction=128"}
+{"id": 90, "category": "factual", "question": "Qual è la RAL indicata per il ruolo Senior AI Engineer?", "reference_answer": "EUR 65.000 - EUR 85.000"}
+{"id": 91, "category": "factual", "question": "Qual è la location per il ruolo MLOps Engineer?", "reference_answer": "Remoto (Italia)"}
+{"id": 92, "category": "factual", "question": "Qual è il budget formazione annuale tra i benefit?", "reference_answer": "EUR 3.000/anno"}
+{"id": 93, "category": "factual", "question": "Quanti utenti attivi ha il progetto di recommendation in migrazione a GCP?", "reference_answer": "10M"}
+{"id": 94, "category": "factual", "question": "Qual è il ROI del case study Banca Nazionale?", "reference_answer": "340%"}
+{"id": 95, "category": "factual", "question": "Qual è l'accuracy nel case study Ospedale San Raffaele?", "reference_answer": "99.2%"}
+{"id": 96, "category": "factual", "question": "Di quanto aumenta la conversione nel case study RetailGiant?", "reference_answer": "+45%"}
+{"id": 97, "category": "factual", "question": "Qual è la riduzione del downtime nel caso AutoTech?", "reference_answer": "-60%"}
+{"id": 98, "category": "factual", "question": "Qual è il backlog di pratiche nel caso Assicurazione Futura?", "reference_answer": "3.000"}
+{"id": 99, "category": "factual", "question": "Quale percentuale di query viene gestita automaticamente nel caso FarmaClick?", "reference_answer": "85%"}
+{"id": 100, "category": "factual", "question": "Qual è il prezzo mensile del piano Starter?", "reference_answer": "EUR 499/mese"}

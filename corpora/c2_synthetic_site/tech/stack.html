@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Stack Tecnologico - TechNova Solutions</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { color: #667eea; }
+        .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0; }
+        .tech-item { background: #f5f5f5; padding: 1rem; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <!-- In tech/stack.html e tech/api.html -->
+    <nav style="background: #f8f9fa; padding: 1rem; margin-bottom: 2rem; border-radius: 8px;">
+        <a href="/" style="color: #667eea; text-decoration: none;">🏠 Home</a>
+        <span style="color: #666; margin: 0 0.5rem;">/</span>
+        <span style="color: #333;">Area Tecnica</span>
+        <span style="float: right;">
+            <a href="/tech/stack" style="color: #667eea; margin-right: 1rem;">Stack</a>
+            <a href="/tech/api" style="color: #667eea;">API</a>
+        </span>
+    </nav>
+    
+    <h1>🔧 Stack Tecnologico</h1>
+    <p>TechNova utilizza tecnologie cutting-edge per garantire performance e scalabilità:</p>
+
+    <div class="tech-grid">
+        <div class="tech-item">
+            <h3>Backend</h3>
+            <ul>
+                <li>Python 3.11+ con FastAPI</li>
+                <li>PostgreSQL 15 con pgvector</li>
+                <li>Redis per caching</li>
+                <li>Celery per task queue</li>
+            </ul>
+        </div>
+        <div class="tech-item">
+            <h3>AI/ML</h3>
+            <ul>
+                <li>PyTorch 2.0</li>
+                <li>Transformers (HuggingFace)</li>
+                <li>LangChain & LlamaIndex</li>
+                <li>OpenAI API / Anthropic Claude</li>
+            </ul>
+        </div>
+        <div class="tech-item">
+            <h3>Infrastruttura</h3>
+            <ul>
+                <li>Kubernetes su AWS EKS</li>
+                <li>Docker containers</li>
+                <li>Terraform per IaC</li>
+                <li>GitHub Actions CI/CD</li>
+            </ul>
+        </div>
+        <div class="tech-item">
+            <h3>Frontend</h3>
+            <ul>
+                <li>React 18 con TypeScript</li>
+                <li>Next.js 14 (App Router)</li>
+                <li>Tailwind CSS</li>
+                <li>WebSocket per real-time</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Architettura RAG</h2>
+    <p>Il nostro sistema RAG (Retrieval Augmented Generation) segue questa architettura:</p>
+    <ol>
+        <li><strong>Document Ingestion:</strong> Parsing di PDF, DOCX, TXT con estrazione strutturata</li>
+        <li><strong>Chunking:</strong> Suddivisione in blocchi di 512-1024 token con overlap del 20%</li>
+        <li><strong>Embedding:</strong> Vectorizzazione con text-embedding-3-large (OpenAI) o BGE-large</li>
+        <li><strong>Vector Store:</strong> Storage in PostgreSQL pgvector con indice HNSW</li>
+        <li><strong>Retrieval:</strong> Hybrid search (semantico + BM25) con reranking</li>
+        <li><strong>Generation:</strong> Context injection in GPT-4o o Claude 3.5 Sonnet</li>
+    </ol>
+
+    <p><strong>Performance:</strong> Latenza media di 800ms per query complesse su knowledge base di 100k documenti.</p>
+</body>
+</html>

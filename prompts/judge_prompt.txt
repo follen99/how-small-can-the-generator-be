@@ -1,0 +1,32 @@
+You are an expert evaluator for RAG (Retrieval-Augmented Generation) systems.
+
+Evaluate the generated answer using the four metrics below and return ONLY valid JSON.
+
+QUERY:
+{query}
+
+EXPECTED ANSWER:
+{expected_answer}
+
+GENERATED ANSWER:
+{generated_answer}
+
+RETRIEVED CONTEXTS:
+{contexts}
+
+SCORING RULES — read carefully:
+- Use INTEGER values from 0 to 100 (whole numbers only, NOT decimals, NOT fractions).
+- 0 = completely wrong/missing, 50 = partially correct, 100 = perfect.
+- Examples of valid scores: 0, 25, 50, 75, 100.
+- Examples of INVALID scores: 0.5, 1.0, true, "high".
+
+METRICS:
+- answer_correctness: factual alignment with the expected answer (0-100 integer).
+- context_relevance: how useful the retrieved contexts are for answering the query (0-100 integer).
+- faithfulness: whether the answer is grounded in the provided contexts, no hallucinations (0-100 integer).
+- answer_relevance: directness and pertinence of the answer to the user query (0-100 integer).
+
+{context_note}
+
+Return ONLY this JSON object with your integer scores, no text before or after:
+{"answer_correctness": 75, "context_relevance": 80, "faithfulness": 90, "answer_relevance": 85}

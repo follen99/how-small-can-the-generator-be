@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Tecnico - TechNova Solutions</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        article { margin: 2rem 0; padding: 1.5rem; background: #f9f9f9; border-radius: 8px; }
+        h1 { color: #667eea; }
+        .date { color: #888; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <!-- In tech/stack.html e tech/api.html -->
+    <nav style="background: #f8f9fa; padding: 1rem; margin-bottom: 2rem; border-radius: 8px;">
+        <a href="/" style="color: #667eea; text-decoration: none;">🏠 Home</a>
+        <span style="color: #666; margin: 0 0.5rem;">/</span>
+        <span style="color: #333;">Area Tecnica</span>
+        <span style="float: right;">
+            <a href="/tech/stack" style="color: #667eea; margin-right: 1rem;">Stack</a>
+            <a href="/tech/api" style="color: #667eea;">API</a>
+        </span>
+    </nav>
+    
+    <h1>📝 Blog Tecnico</h1>
+
+    <article>
+        <h2>Come ottimizzare un sistema RAG: lezioni apprese da 50+ deployment</h2>
+        <p class="date">15 Gennaio 2024</p>
+        <p>Dopo aver implementato sistemi RAG per decine di clienti, abbiamo identificato pattern ricorrenti di successo e fallimento. Ecco i 7 principi fondamentali:</p>
+        <ol>
+            <li><strong>Chunking intelligente:</strong> Non usare sempre la stessa dimensione. Adatta lo splitter al tipo di documento.</li>
+            <li><strong>Hybrid search è obbligatoria:</strong> La ricerca semantica da sola non basta. Combina con BM25.</li>
+            <li><strong>Reranking:</strong> Usa un modello cross-encoder per riordinare i top-k risultati.</li>
+            <li><strong>Query expansion:</strong> Genera sinonimi e varianti della query per migliorare il recall.</li>
+            <li><strong>Metadata filtering:</strong> Permetti filtri pre-retrieval per ridurre lo spazio di ricerca.</li>
+            <li><strong>Context compression:</strong> Rimuovi informazioni ridondanti prima di inviare al LLM.</li>
+            <li><strong>Evaluation continua:</strong> Monitora faithfulness e answer relevance in produzione.</li>
+        </ol>
+    </article>
+
+    <article>
+        <h2>Confronto tra Vector DB: Pinecone vs Weaviate vs pgvector</h2>
+        <p class="date">3 Dicembre 2023</p>
+        <p>Abbiamo stress-testato le principali soluzioni di vector database con 1M di vettori 1536-dimensionali:</p>
+        <table border="1" style="width:100%; margin-top:1rem;">
+            <tr><th>Database</th><th>Latency p99</th><th>Throughput</th><th>Costo/Mese</th></tr>
+            <tr><td>Pinecone (Serverless)</td><td>45ms</td><td>2k QPS</td><td>$70</td></tr>
+            <tr><td>Weaviate Cloud</td><td>62ms</td><td>1.5k QPS</td><td>$120</td></tr>
+            <tr><td>pgvector (RDS)</td><td>28ms</td><td>3k QPS</td><td>$45</td></tr>
+        </table>
+        <p style="margin-top:1rem;">Per workload enterprise consigliamo pgvector con indice HNSW (m=16, ef_construction=128).</p>
+    </article>
+</body>
+</html>
