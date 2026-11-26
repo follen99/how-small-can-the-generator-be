@@ -13,12 +13,11 @@ in `data/runs.csv`.
 | Judge | `gemini-3.1-flash-lite-preview`, single-answer grading against the reference answer, temperature 0.2 |
 | Runtime | Ollama v0.20.7 |
 | Hardware | AMD Ryzen 7 4800H, RTX 2060 Mobile 6 GiB, 16 GB DDR4, Pop!_OS 22.04 LTS |
+| Generation temperature | 0.6 (`RAG_TEMPERATURE`, a constant in RAG-Maker's `rag_pipeline/config.py`; the benchmark tool does not override it) |
+| Context window | 8,192 tokens for the local generators (`CTX_WINDOW` default; enough for four 1,500-token chunks) |
 
-<!-- DA VERIFICARE PRIMA DI PUBBLICARE: temperatura di generazione. Paper e tesi dicono 0.1;
-     RAG-Maker ha RAG_TEMPERATURE = 0.6 in config.py in tutti i commit da aprile a luglio 2026,
-     e RagTester non la invia. Controllare il checkout usato sul PC della campagna. Stesso
-     controllo per CTX_WINDOW (default 8192). -->
-| Generation temperature | **to be confirmed** |
+Each configuration was run once: at temperature 0.6, sampling variability is not negligible
+and was not measured.
 
 ## Generators
 

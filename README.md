@@ -1,6 +1,4 @@
-<!-- DA COMPLETARE PRIMA DI PUBBLICARE (poi togliere questo blocco):
-     1. temperatura di generazione in config.md (0.1 o 0.6?);
-     2. riferimento bibliografico del paper una volta accettato. -->
+<!-- DA COMPLETARE: riferimento bibliografico del paper una volta accettato. -->
 
 # How Small Can the Generator Be? — data and materials
 
